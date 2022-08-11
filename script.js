@@ -2,7 +2,9 @@ const body = document.querySelector('body');
 
 //main container
 mainContainer()
+
 function mainContainer(){
+    $('.pagecontainer').hide()
 let container = document.createElement('div');
     container.className = "main-container";
 let welcomePage = document.createElement('div');
@@ -21,21 +23,44 @@ let welcomeContainer = document.querySelector('.welcome-container');
 //get info button func
 GetCharacterButton()
 function GetCharacterButton(){
+
 let getDisneyBtn = document.createElement('button');
     getDisneyBtn.className = 'get-disney-btn';
     getDisneyBtn.textContent = 'GET DISNEY CHARACTERS';
 
-getDisneyBtn.addEventListener('click', getDisneyData);
-
+getDisneyBtn.addEventListener('click', function(){
+    createPages(1,10)
+})
 welcomeContainer.append(getDisneyBtn);
 }
 
-function getDisneyData(){
-    $('.welcome-container').hide()
-    $.get('https://api.disneyapi.dev/characters', disneyData);
+function createPages(startNum, endNum){
+    $('.get-disney-btn').hide()
+    let num = 0;
+    let pageContainer = document.createElement('div');
+    pageContainer.className = 'pagecontainer'
+    for(startNum; startNum <= endNum; startNum++){
+        let pages = document.createElement('button');
+        pages.className = 'pages'
+        if(startNum <= endNum){
+            num++;
+            pages.id = num.toString();
+            pages.textContent = num.toString();
+        }
+        pages.addEventListener('click', getDisneyData)
+        pageContainer.append(pages)
+        welcomeContainer.append(pageContainer)
+    }
+}
+
+
+function getDisneyData(e){
+    $('.pages').hide()
+    $.get(`https://api.disneyapi.dev/characters?page=${e.target.id}`, disneyData);
 }
 
 function disneyData(characters){
+    charReturnBtn()
 let characterData = characters.data;
     for(let i = 0; i < characterData.length; i++){
         let char = characterData[i]
@@ -43,8 +68,23 @@ let characterData = characters.data;
     }
 }
 
+
+function charReturnBtn(){
+    let charReturnBtn = document.createElement('button');
+    charReturnBtn.className = 'char-return';
+    charReturnBtn.textContent = 'Back for other Pages'
+
+    charReturnBtn.addEventListener('click', function(){
+        $('.char-container').hide();
+        createPages(1,10);
+        $('.char-return').hide()
+    })
+
+    container.append(charReturnBtn)
+}
+
+
 function MakeCharDiv(char){
-    // let charId = char._id
     let charName = char.name;
     let charImg = char.imageUrl;
 
@@ -57,6 +97,7 @@ function MakeCharDiv(char){
     charDiv.addEventListener('click', function(){
         
         $('.char-container').hide();
+        $('.char-return').hide()
         let imageContainer = document.createElement('div')
         imageContainer.className = 'image-container'
         let picture = document.createElement('img')
@@ -85,6 +126,7 @@ function returnBtn(){
         $('.returnBtn').remove()
         $('img').remove();
         $('.char-container').show();
+        $('.char-return').show()
     })
 }
 
