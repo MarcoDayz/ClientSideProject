@@ -39,7 +39,7 @@ body{
     font-size: 60px;
     font-family: fantasy;
     letter-spacing: 2px;
-    margin-right: 4rem;
+    margin-right: 3rem;
     margin-bottom: 20px;
     text-align: center;
 }
@@ -53,6 +53,7 @@ body{
     color: rgb(11, 60, 175);
     text-shadow: 1px 1px 1px rgba(122, 122, 122, 0.875), 0 0 .2em rgba(255, 255, 255, 0.621), 0 0 .8em rgba(255, 255, 255, 0.607);
     font-size: 1rem;
+    margin-right: 2rem;
 }
 .get-disney-btn:hover{
     color: rgba(0, 255, 255, 0.524);
