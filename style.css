@@ -1,4 +1,151 @@
-.image{
-height: 300px;
-width: 300px;
+body{
+    background-image: url("disney.jpg");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-color: black;   
 }
+
+
+.main-container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-shrink: 1;
+    margin: 10vw;
+    align-items: center;
+    justify-content: space-around;
+    backdrop-filter: blur(5px);
+    border-radius: 8px;
+    box-shadow: 0 0 50px #2196f3, 0 0 60px #2196f3, 0 0 90px #2196f3;
+}
+
+.welcome-container{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+
+}
+
+.pagecontainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.header{
+    color: rgba(255, 255, 255, 0.788);
+    text-shadow: 1px 1px 1px rgba(0, 255, 255, 0.875), 0 0 .2em rgba(255, 255, 255, 0.621), 0 0 .8em rgba(255, 255, 255, 0.607);
+    font-size: 60px;
+    font-family: fantasy;
+    letter-spacing: 2px;
+    margin-right: 4rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+.get-disney-btn{
+    width: 250px;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 8px;
+    color: rgb(11, 60, 175);
+    text-shadow: 1px 1px 1px rgba(122, 122, 122, 0.875), 0 0 .2em rgba(255, 255, 255, 0.621), 0 0 .8em rgba(255, 255, 255, 0.607);
+    font-size: 1rem;
+}
+.get-disney-btn:hover{
+    color: rgba(0, 255, 255, 0.524);
+    background: white;
+    box-shadow: 0 0 20px #2196f3, 0 0 60px #2196f3, 0 0 90px #2196f3;
+    transition: 0.5;
+}
+
+
+.pages{
+    margin: 1px;
+    cursor: pointer;
+    transition: padding .5s ease;
+    border-radius: 5px;
+    color: rgb(11, 60, 175);
+    text-shadow: 1px 1px 1px rgba(122, 122, 122, 0.875), 0 0 .2em rgba(255, 255, 255, 0.621), 0 0 .8em rgba(255, 255, 255, 0.607);
+    font-size: 1rem;
+}
+.pages:hover{
+    color: rgba(0, 255, 255, 0.524);
+    background: white;
+    box-shadow: 0 0 20px #2196f3, 0 0 60px #2196f3, 0 0 90px #2196f3;
+    transition: 0.5;
+}
+
+
+.char-return{
+    width: 200px;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 8px;
+    color: rgb(11, 60, 175);
+    text-shadow: 1px 1px 1px rgba(122, 122, 122, 0.875), 0 0 .2em rgba(255, 255, 255, 0.621), 0 0 .8em rgba(255, 255, 255, 0.607);
+    font-size: 1rem;
+}
+.char-return:hover{
+    color: rgba(0, 255, 255, 0.524);
+    background: white;
+    box-shadow: 0 0 20px #2196f3, 0 0 60px #2196f3, 0 0 90px #2196f3;
+    transition: 0.5;
+}
+
+
+
+.char-container{
+    padding: 5px;
+    margin: 5px;
+    /* border: .5px solid white; */
+    border-radius: 8px;
+    color: white;
+    text-shadow: 1px 1px 1px rgba(122, 122, 122, 0.875), 0 0 .2em rgba(255, 255, 255, 0.621), 0 0 .8em rgba(255, 255, 255, 0.607);
+    font-size: 20px;
+    cursor: pointer;
+}
+.char-container:hover{
+    color: rgba(0, 255, 255, 0.524);
+    background: white;
+    box-shadow: 0 0 20px #2196f3, 0 0 60px #2196f3, 0 0 90px #2196f3;
+    transition: 0.5;
+}
+
+
+.image-container{
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+
+
+.image{
+    height: 400px;
+    width: 400px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 20px #2196f3, 0 0 60px #2196f3, 0 0 90px #2196f3;
+}
+
+
+.returnBtn{
+    width: 100px;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 8px;
+    color: rgb(11, 60, 175);
+    text-shadow: 1px 1px 2px rgba(122, 122, 122, 0.875), 0 0 .2em rgba(255, 255, 255, 0.621), 0 0 .8em rgba(255, 255, 255, 0.607);
+    font-size: 1rem;
+    margin: 2rem;
+}
+.returnBtn:hover{
+    color: rgba(0, 255, 255, 0.524);
+    background: white;
+    box-shadow: 0 0 20px #2196f3, 0 0 60px #2196f3, 0 0 90px #2196f3;
+    transition: 0.5;
+}
+

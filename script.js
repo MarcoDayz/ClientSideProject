@@ -11,7 +11,7 @@ let welcomePage = document.createElement('div');
     welcomePage.className = 'welcome-container'
 let h1 = document.createElement('h1')
     h1.className = "header"
-    h1.textContent = "WELCOME TO DISNEY"
+    h1.textContent = "DISNEY CHARACTER LIBRARY "
 welcomePage.append(h1)
 container.append(welcomePage)
 body.prepend(container);
@@ -29,7 +29,7 @@ let getDisneyBtn = document.createElement('button');
     getDisneyBtn.textContent = 'GET DISNEY CHARACTERS';
 
 getDisneyBtn.addEventListener('click', function(){
-    createPages(1,10)
+    createPages(1,149)
 })
 welcomeContainer.append(getDisneyBtn);
 }
@@ -64,7 +64,7 @@ function disneyData(characters){
 let characterData = characters.data;
     for(let i = 0; i < characterData.length; i++){
         let char = characterData[i]
-        MakeCharDiv(char)
+        makeCharDiv(char)
     }
 }
 
@@ -75,16 +75,16 @@ function charReturnBtn(){
     charReturnBtn.textContent = 'Back for other Pages'
 
     charReturnBtn.addEventListener('click', function(){
-        $('.char-container').hide();
-        createPages(1,10);
-        $('.char-return').hide()
+        $('.char-container').remove();
+        createPages(1,149);
+        $('.char-return').remove()
     })
 
-    container.append(charReturnBtn)
+    welcomeContainer.append(charReturnBtn)
 }
 
 
-function MakeCharDiv(char){
+function makeCharDiv(char){
     let charName = char.name;
     let charImg = char.imageUrl;
 
@@ -103,7 +103,7 @@ function MakeCharDiv(char){
         let picture = document.createElement('img')
         picture.className = 'image'
         picture.src = charImg;
-  
+
         imageContainer.append(picture)
         container.append(imageContainer)
         returnBtn()
@@ -120,11 +120,11 @@ function returnBtn(){
     returnBtn.className = 'returnBtn';
     returnBtn.textContent = 'Return';
 
-    $('.main-container').append(returnBtn);
+    welcomeContainer.append(returnBtn);
 
     returnBtn.addEventListener('click', function(){
         $('.returnBtn').remove()
-        $('img').remove();
+        $('.image-container').remove();
         $('.char-container').show();
         $('.char-return').show()
     })
